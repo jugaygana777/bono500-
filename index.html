@@ -202,12 +202,6 @@
       font-size: 14px;
     }
 
-    .tick-verificado {
-      width: 22px;
-      vertical-align: middle;
-      margin: 0 5px;
-    }
-
     @media (max-width: 600px) {
       .whatsapp-button {
         font-size: 16px;
@@ -235,9 +229,11 @@
     <a href="https://wa.me/5493521551473" target="_blank" onclick="fbq('trackCustom', 'ClickWhatsApp')">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="50" height="50" />
     </a>
-    <h2>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Verified-badge.svg" alt="verificado" class="tick-verificado">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Verified-badge.svg" alt="verificado" class="tick-verificado">
+    <h2 style="font-size: 20px; margin: 10px 0; display: flex; align-items: center; justify-content: center;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Instagram_Verified_Badge.svg" 
+           alt="verificado" 
+           style="width: 22px; margin-right: 8px;" />
+      <b>Plataforma Verificada</b>
     </h2>
     <p class="green">Casino de Confianza</p>
   </section>
@@ -246,7 +242,7 @@
     Te estamos conectando con nuestro equipo vía WhatsApp.
   </div>
 
-  <a class="whatsapp-button" 
+  <a class="whatsapp-button pulse" 
      href="https://wa.me/5493521551473?text=Quiero%20mi%20bono%20del%20500%25" 
      target="_blank"
      onclick="fbq('trackCustom', 'ClickWhatsApp')">
