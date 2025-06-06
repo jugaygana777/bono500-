@@ -140,22 +140,6 @@
       font-size: 24px;
     }
 
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
-    }
-
-    .whatsapp-button.pulse {
-      animation: pulse 2s infinite;
-    }
-
     .clientes {
       background-color: #2ec4a7;
       color: white;
@@ -218,24 +202,8 @@
       font-size: 14px;
     }
 
-    @keyframes pulse-blue {
-      0% {
-        filter: drop-shadow(0 0 0px #0095f6);
-        transform: rotate(0deg) scale(1);
-      }
-      50% {
-        filter: drop-shadow(0 0 6px #0095f6);
-        transform: rotate(180deg) scale(1.2);
-      }
-      100% {
-        filter: drop-shadow(0 0 0px #0095f6);
-        transform: rotate(360deg) scale(1);
-      }
-    }
-
     .tick-verificado {
-      animation: pulse-blue 3s infinite linear;
-      width: 20px;
+      width: 22px;
       vertical-align: middle;
       margin: 0 5px;
     }
@@ -269,7 +237,6 @@
     </a>
     <h2>
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Verified-badge.svg" alt="verificado" class="tick-verificado">
-      <b>Plataforma Verificada</b>
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Verified-badge.svg" alt="verificado" class="tick-verificado">
     </h2>
     <p class="green">Casino de Confianza</p>
@@ -279,7 +246,7 @@
     Te estamos conectando con nuestro equipo vía WhatsApp.
   </div>
 
-  <a class="whatsapp-button pulse" 
+  <a class="whatsapp-button" 
      href="https://wa.me/5493521551473?text=Quiero%20mi%20bono%20del%20500%25" 
      target="_blank"
      onclick="fbq('trackCustom', 'ClickWhatsApp')">
