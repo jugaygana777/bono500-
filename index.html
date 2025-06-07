@@ -213,6 +213,28 @@
       font-size: 14px;
     }
 
+    .alerta-fichas {
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      padding: 15px 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 18px;
+      box-shadow: 0 0 15px red;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px red;
+      }
+      to {
+        box-shadow: 0 0 25px red, 0 0 30px red;
+      }
+    }
+
     @media (max-width: 600px) {
       .whatsapp-button {
         font-size: 16px;
@@ -253,12 +275,19 @@
     Te estamos conectando con nuestro equipo vía WhatsApp.
   </div>
 
+  <!-- 🚫 Cartel de Fichas de Regalo -->
+  <div class="alerta-fichas">🚫 NO HAY FICHAS DE REGALO</div>
+
   <a class="whatsapp-button pulse" 
      href="https://wa.me/5493521551473?text=Quiero%20mi%20bono%20del%20500%25" 
      target="_blank"
      onclick="fbq('trackCustom', 'ClickWhatsApp')">
     <i class="fab fa-whatsapp"></i> ¡QUIERO MI BONO!
   </a>
+
+  <audio id="casino-sound" preload="auto">
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-slot-machine-win-alarm-1993.mp3" type="audio/mpeg">
+  </audio>
 
   <div class="clientes">
     👥 +10.000 CLIENTES GANANDO todos los días
@@ -308,11 +337,22 @@
     actualizarNotificacion();
 
     const whatsappBtn = document.querySelector('.whatsapp-button');
-    if(whatsappBtn) {
-      whatsappBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.05)';
+    const casinoSound = document.getElementById("casino-sound");
+
+    if (whatsappBtn) {
+      whatsappBtn.addEventListener('mouseenter', function () {
+        if (window.innerWidth > 768) {
+          casinoSound.currentTime = 0;
+          casinoSound.play();
+        }
       });
-      whatsappBtn.addEventListener('mouseleave', function() {
+
+      whatsappBtn.addEventListener('touchstart', function () {
+        casinoSound.currentTime = 0;
+        casinoSound.play();
+      });
+
+      whatsappBtn.addEventListener('mouseleave', function () {
         this.style.transform = 'scale(1)';
       });
     }
